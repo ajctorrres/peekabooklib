@@ -17,6 +17,10 @@ router.get('/library', (req, res)=>{
 router.get('/services', (req, res)=>{
     res.render('Services');
 })
+ 
+router.get('/account', (req, res)=>{
+    res.render('Account');
+})
 
 //Delete
 

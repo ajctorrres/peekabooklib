@@ -16,22 +16,13 @@
               </b-list-group-item>
               <b-collapse id="downtowncamp">
                 <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(0) }" v-on:click="toggle(0); selected = 0">
-                  <small
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked"
-                  >American Corner</small>
+                  <small>American Corner</small>
                 </b-list-group-item>
                 <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(1) }" v-on:click="toggle(1); selected = 1">
-                  <small
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked" 
-                  >Bernard Bonk Library</small>
+                  <small>Bernard Bonk Library</small>
                 </b-list-group-item>
                 <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(2) }" v-on:click="toggle(2); selected = 2">
-                  <small
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked"
-                  >Law Library</small>
+                  <small>Law Library</small>
                 </b-list-group-item>
               </b-collapse>
               <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(3) }" v-on:click="toggle(3); selected = 3">
@@ -42,23 +33,14 @@
                 <v-icon right small>fas fa-arrow-down</v-icon>
               </b-list-group-item>
               <b-collapse id="southcamp">
-                <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(4), 'btn-secondary': !active}" v-on:click="toggle(4); selected = 4">
-                  <small 
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked"
-                  >Educational Library</small>
+                <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(4)}" v-on:click="toggle(4); selected = 4">
+                  <small>Educational Library</small>
                 </b-list-group-item>
                 <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(5) }" v-on:click="toggle(5); selected = 5">
-                  <small 
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked"
-                  >Elementary Library</small>
+                  <small>Elementary Library</small>
                 </b-list-group-item>
                 <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(6) }" v-on:click="toggle(6); selected = 6">
-                  <small 
-                    v-bind:class="{'white': !clicked, 'blue': clicked}"
-                    v-on:click ="clicked = !clicked"
-                  >High School Library</small>
+                  <small>High School Library</small>
                 </b-list-group-item>
               </b-collapse>
               <b-list-group-item href="#" v-bind:class="{ 'active' : isSelected(7) }" v-on:click="toggle(7); selected = 7">
@@ -94,7 +76,7 @@
         </div>
 
         <div class="col-md-1">
-          <div class="card libContact">
+          <div class="card libContact mx-auto">
             <div class="card-body">
               <h5 class="card-title text-left">Contact Us</h5>
               <p class="card-text text-left">Contact Person</p>
@@ -133,7 +115,7 @@ export default {
                 campName: "Downtown Campus",
                 campAdd: "Pantaleon del Rosario Street, Cebu City, Philippines 6000.",
                 campTime: "7:30 a.m. to 8:00 p.m.",
-                content: "lorem ipsum"
+                content: ""
               },
               { 
                 libName: "Bernard Bonk Library",
@@ -215,7 +197,7 @@ export default {
 i.v-icon.v-icon {
   color: grey;
 } 
-.active{
+.active{ 
   background-color: #6c757d ;
 }
 .libCamp {
