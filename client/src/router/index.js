@@ -37,6 +37,16 @@ const routes = [
     path: '/mysaved',
     name: 'MySaved',
     component: () => import('../views/MySaved.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('../views/Dashboard.vue')
+  },
+  {
+    path: '/acc-mgmt/student',
+    name: 'Manage Student',
+    component: () => import('../views/AccMgmtStudent.vue')
   }
 ]
 
