@@ -57,6 +57,11 @@ const routes = [
     path: '/acc-mgmt/admin',
     name: 'Manage Admin',
     component: () => import('../views/AccMgmtAdmin.vue')
+  },
+  {
+    path: '/account/activity',
+    name: 'Account Activity',
+    component: () => import('../views/AdminActivity.vue')
   }
 ]
 
