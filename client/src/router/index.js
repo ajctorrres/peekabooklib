@@ -47,6 +47,16 @@ const routes = [
     path: '/acc-mgmt/student',
     name: 'Manage Student',
     component: () => import('../views/AccMgmtStudent.vue')
+  },
+  {
+    path: '/acc-mgmt/faculty',
+    name: 'Manage Faculty',
+    component: () => import('../views/AccMgmtFaculty.vue')
+  },
+  {
+    path: '/acc-mgmt/admin',
+    name: 'Manage Admin',
+    component: () => import('../views/AccMgmtAdmin.vue')
   }
 ]
 
