@@ -20,12 +20,12 @@
             <b-tab title="Information Literacy Program" :title-link-class="linkClass(0)">
               Video + Info about the program
               <div>
-                <b-embed
+                <!-- <b-embed
                   type="iframe"
                   aspect="16by9"
                   src= "https://www.youtube.com/embed/yIvb4csSgcs"
                   allowfullscreen
-                ></b-embed>
+                ></b-embed> -->
               </div>
             </b-tab>
             <b-tab title="Library Services" :title-link-class="linkClass(1)">
@@ -58,7 +58,7 @@ export default {
       linkClass: function(idx) {
         if (this.tabIndex === idx) {
           //text when active
-          return ['bg-primary', 'text-light']
+          return ['bg-secondary', 'text-light']
         } else {
           //text when not active
           return ['bg-light', 'text-dark']
@@ -68,4 +68,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+</style>

@@ -1,14 +1,11 @@
 <template>
-  <div class="about">
+  <div class="container">
     <h1>This is account page</h1>
 
     <div class="row">
-      <div class="col"></div>
-      <div class="col-8">
-        <b-card
-          style="max-width: 100%;" 
-          bg-variant="light"
-        >
+      <div class="col col-xs-2"></div>
+      <div class="col-8 col-xs-10">
+        <b-card style="max-width: 100%;" bg-variant="light">
           <b-tabs 
             v-model="tabIndex" 
             card
@@ -20,14 +17,24 @@
             <b-tab title="Profile" :title-link-class="linkClass(0)">
               <div class="row">
                 <div class="col-4">
-                  <b-img v-bind="mainProps" rounded alt="Rounded image"></b-img>
+                  <b-img  
+                    v-bind="mainProps" 
+                    rounded
+                    alt="Rounded image"
+                    contain
+                    height= "200%"
+                    width= "200%"
+                  ></b-img>
                 </div>
-                <div class="col-8">
-                  <b-card>
-                    <b-card-header class="row">
+                <div class="col-md-8">
+                  <b-card
+                    style="max-width: 100%;" 
+                    bg-variant="light"
+                  >
+                    <b-card-header style="text-align:left;">
                       <h5><v-icon left large color='black'>fas fa-user</v-icon>Student Profile</h5>
                     </b-card-header>
-                    <b-card-text style="text-align:left; margin: 5%">
+                    <b-card-text style="text-align:left; margin-top: 5%">
                       <p>Name: {{profile.name}}</p>
                       <p>Student ID: {{profile.studId}}</p>
                       <p>Date of Birth: {{profile.dob}}</p>
@@ -37,13 +44,13 @@
                       <p>Student Type: {{profile.studType}}</p>
                     </b-card-text>
                   </b-card>
-                </div>
+                </div> 
               </div>
             </b-tab>
             <b-tab title="General Setting" :title-link-class="linkClass(1)">
               <div>
                 <b-card no-body>
-                  <b-tabs pills card vertical v-model="genSetTabIndx">
+                  <b-tabs class="col-md-12" pills card vertical v-model="genSetTabIndx">
                     <b-tab title="Account" :title-link-class="genSetTabClass(0)">
                       <b-card-text>
                         <b-container fluid>
@@ -84,25 +91,27 @@
                     </b-tab>
                     <b-tab title="Notification" :title-link-class="genSetTabClass(1)">
                       <b-card-text style="text-align: left">
-                        <b-form-group label="Using sub-components:">
+                        <b-form-group>
                           <b-form-checkbox-group id="checkbox-group-2" v-model="selected_notif" name="notif">
                             <div>
                               <b-form-checkbox value="savedBook">Saved Book</b-form-checkbox>
-                              <p>Notify me if saved book is available</p>
+                              <p class="small text-muted">Notify me if saved book is available</p>
                             </div>
                             <div>
                               <b-form-checkbox value="paymentDue">Payment Due</b-form-checkbox>
-                              <p>Remind me of payment dues</p>
+                              <p class="small text-muted">Remind me of payment dues</p>
                             </div>
                             <div>
                               <b-form-checkbox value="bookReturn">Book Return</b-form-checkbox>
-                              <p>Notify me of book return dues</p>
+                              <p class="small text-muted">Notify me of book return dues</p>
                             </div>
                             <div>
                               <div>
-                                <b-label>Email Notifications</b-label>
+                                <p>Email Notifications</p>
+                                <b-form-checkbox id="checkbox-1" value="emailNotif">
+                                  <p>Send me emails about my activity and updates I requested.</p>
+                                </b-form-checkbox>
                               </div>
-                              <b-form-checkbox value="emailNotif"><p>Send me emails about my activity and updates I requested.</p></b-form-checkbox>
                             </div> 
                           </b-form-checkbox-group>
                         </b-form-group>
@@ -111,11 +120,13 @@
                     <b-tab title="Payment Method" :title-link-class="genSetTabClass(2)">
                       <b-card-text style="text-align: left">
                          <div>
-                           <b-form-group label="Individual radios">
-                            <b-form-radio v-model="selected_paymentMethod" value="cash">
+                           <b-form-group label="Individual radios" label-for="radio-1">
+                            <b-form-radio id="radio-1" v-model="selected_paymentMethod" value="cash">
                               <p>Cash</p>
                             </b-form-radio>
-                            <b-form-radio v-model="selected_paymentMethod" value="ePayment">
+                           </b-form-group>
+                           <b-form-group label="Individual radios"  label-for="radio-">
+                            <b-form-radio id="radio-2" v-model="selected_paymentMethod" value="ePayment">
                               <p>E-payment</p>
                               <ul>
                                 <li><a href="https://www.gcash.com/">Link G-Cash</a></li>
@@ -131,37 +142,35 @@
                 </b-card>
               </div>
               <div class="row">
-                <div class="col-9"></div>
-                <div class="col-1">
+                <div class="col-7"></div>
+                <div class="col-5">
                   <b-button v-on:click="save" variant="secondary">Save</b-button>
-                </div>
-                <div class="col-1">
                   <b-button variant="light">Cancel</b-button>
-                </div>  
+                </div>
               </div>
             </b-tab>
             <b-tab title="Account Activity" :title-link-class="linkClass(2)">
               <div>
                 <b-card no-body>
-                  <b-tabs pills card vertical v-model="accActTabIndx">
+                  <b-tabs class="col-md-12" pills card vertical v-model="accActTabIndx">
                     <b-tab title="Loans" :title-link-class="accActTabClass(0)">
                       <b-card-text>
                         <div>
-                          <b-table :items="loans"></b-table>
+                          <b-table responsive :items="loans"></b-table>
                         </div>
                       </b-card-text>
                     </b-tab>
                     <b-tab title="Fines" :title-link-class="accActTabClass(1)">
                       <b-card-text>
                         <div>
-                          <b-table :items="fines"></b-table>
+                          <b-table responsive :items="fines"></b-table>
                         </div>
                       </b-card-text>
                     </b-tab>
                     <b-tab title="Loan History" :title-link-class="accActTabClass(2)">
                       <b-card-text>
                         <div>
-                          <b-table :items="loans"></b-table>
+                          <b-table responsive :items="loans"></b-table>
                         </div>
                       </b-card-text>
                     </b-tab>
@@ -172,7 +181,7 @@
           </b-tabs>
         </b-card>
       </div>
-      <div class="col"></div>
+      <div class="col col-xs-2"></div>
     </div>
 
   </div>
@@ -188,9 +197,7 @@ export default {
         accActTabIndx: 0,
         mainProps: { 
           blank: true, 
-          blankColor: '#777', 
-          width: 200, 
-          height: 200
+          blankColor: '#6c757d'
         },
         profile: {
           name: "student",
