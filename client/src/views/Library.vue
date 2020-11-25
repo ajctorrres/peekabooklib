@@ -115,7 +115,7 @@ export default {
                 campName: "Downtown Campus",
                 campAdd: "Pantaleon del Rosario Street, Cebu City, Philippines 6000.",
                 campTime: "7:30 a.m. to 8:00 p.m.",
-                content: "lorem ipsum"
+                content: ""
               },
               { 
                 libName: "Bernard Bonk Library",

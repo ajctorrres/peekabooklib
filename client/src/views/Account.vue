@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>This is account page</h1>
 
     <div class="row">
       <div class="col col-xs-2"></div>
