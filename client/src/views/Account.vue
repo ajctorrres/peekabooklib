@@ -20,7 +20,7 @@
                   <b-tabs pills vertical v-model="genSetTabIndx">
                     <b-tab title="Account" :title-link-class="genSetTabClass(0)">
                       <b-card-text>
-                        <b-card border-variant="dark">
+                        <b-card >
                           <b-row>
                             <b-col sm="4">
                               <label>Contact Number</label>
@@ -57,7 +57,7 @@
                       </b-card-text>
                     </b-tab>
                     <b-tab title="Notification" :title-link-class="genSetTabClass(1)">
-                      <b-card border-variant="dark">
+                      <b-card >
                       <b-card-text style="text-align: left">
                         <b-form-group>
                           <b-form-checkbox-group id="checkbox-group-2" v-model="selected_notif" name="notif">
@@ -87,7 +87,7 @@
                       </b-card>
                     </b-tab>
                     <b-tab title="Payment Method" :title-link-class="genSetTabClass(2)">
-                      <b-card border-variant="dark">
+                      <b-card >
                       <b-card-text style="text-align: left">
                          <div>
                            <b-form-group>
@@ -264,9 +264,6 @@ a:hover {
   color: green;
   text-decoration: none;
 }
-/* .card {
-  border: none;
-} */
 .card-body .card-header{
   background: white;
 }

@@ -2,130 +2,201 @@
   <div class="about">
 
     <div class="row">
-      <div class="col"></div>
-      <div class="col-8">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
         <b-card
           style="max-width: 100%;" 
-          bg-variant="light"
+          border-variant="light"
         >
           <b-tabs 
             v-model="tabIndex" 
-            card
             active-nav-item-class="font-weight-bold"
             active-tab-class="text-dark"
             content-class="mt-3"
             align="center"
+            fill
           >
-            <b-tab title="Information Literacy Program" :title-link-class="linkClass(0)">
-              <!-- Video + Info about the program -->
+            <b-tab 
+              title="Information Literacy Program" 
+              :title-link-class="linkClass(0)"
+            >
               <div>
-                <b-embed type="video" controls poster="poster.png">
+                <b-embed 
+                  type="video" 
+                  controls 
+                  poster="poster.png"
+                >
                   <source src="~@/assets/USC_ILP.mp4" type="video/mp4">
                 </b-embed>
               </div>
             </b-tab>
-            <b-tab title="Library Services" :title-link-class="linkClass(1)">
-              <!-- Service info of the library -->
+
+            <b-tab 
+              title="Library Services" 
+              :title-link-class="linkClass(1)"
+            >
               <div>
-                <b-card no-body>
-                  <b-tabs pills card vertical nav-wrapper-class="w-30" v-model="libServicesTabIndex">
-                    <b-tab title="Circulation" :title-link-class="libServicesTabClass(0)">
+                <b-tabs 
+                  pills 
+                  vertical 
+                  small 
+                  v-model="libServicesTabIndex"
+                >
+                  <b-tab 
+                    title="Circulation" 
+                    :title-link-class="libServicesTabClass(0)"
+                  >
+                    <b-card>
                       <b-card-text>
-                        <p v-for="(item, index) in circulation" :key="index">
+                        <p v-for="(item, a) in circulation" :key="a">
                           <span v-html="item.title"></span>
                           <span v-html="item.desc"></span>
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Current Awareness Service" :title-link-class="libServicesTabClass(1)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Current Awareness Service" 
+                    :title-link-class="libServicesTabClass(1)"
+                  >
+                    <b-card>
                       <b-card-text>
-                        <p v-for="(item, index) in curr_aware" :key="index">
+                        <p v-for="(item, b) in curr_aware" :key="b">
                           <span v-html="item.title"></span>
                           <span v-html="item.desc"></span>
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Information Literacy" :title-link-class="libServicesTabClass(2)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Information Literacy" 
+                    :title-link-class="libServicesTabClass(2)"
+                  >
+                    <b-card>
                       <b-card-text>
                         <span v-html="information_lit[0].title"></span>
                         <span v-html="information_lit[0].desc"></span>
-                        <p v-for="(item, index) in infor_lit" :key="index">
+                        <p v-for="(item, c) in infor_lit" :key="c">
                           <span v-html="item.title"></span>
                           <span v-html="item.desc"></span>
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="JB-LRC Space Utilzation Service" :title-link-class="libServicesTabClass(3)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="JB-LRC Space Utilzation Service" 
+                    :title-link-class="libServicesTabClass(3)"
+                  >
+                    <b-card>
                       <b-card-text>
                         <span v-html="jblrc_space_util[0].title"></span>
                         <span v-html="jblrc_space_util[0].desc"></span>
                         <span v-html="jblrc_space_util[1].title"></span>
-                        <p v-for="(item, index) in jblrc_space_util[1].desc" :key="index">
-                          {{ index + 1 }}.) {{ item.cont }}
+                        <p v-for="(item, d) in jblrc_space_util[1].desc" :key="d">
+                          {{ d + 1 }}.) {{ item.cont }}
+                        </p>
+                        <span v-html="jblrc_space_util[2].title"></span>
+                        <p v-for="(item, e) in jblrc_space_util[2].desc" :key="e">
+                          {{ e + 1 }}.) {{ item.cont }}
+                        </p>
+                        <span v-html="jblrc_space_util[3].title"></span>
+                        <p v-for="(item, f) in jblrc_space_util[3].desc" :key="f">
+                          {{ f + 1 }}.) {{ item.cont }}
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Laptop for a fee" :title-link-class="libServicesTabClass(4)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Laptop for a fee" 
+                    :title-link-class="libServicesTabClass(4)"
+                  >
+                    <b-card>
                       <b-card-text>
                         <span v-html="laptop[0].desc"></span>                        
                         <span v-html="laptop[1].title"></span>
-                        <li v-for="(item, index) in laptop[1].desc" :key="index">
+                        <li v-for="(item, g) in laptop[1].desc" :key="g">
                           {{ item.cont }}
                         </li>
                         <span v-html="laptop[2].title"></span>
                         <span v-html="laptop[3].title"></span>
-                        <li v-for="(item, index) in laptop[3].desc" :key="index">
+                        <li v-for="(item, h) in laptop[3].desc" :key="h">
                           {{ item.cont }}
                         </li>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Interlibrary Loan, Referrals" :title-link-class="libServicesTabClass(5)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Interlibrary Loan, Referrals" 
+                    :title-link-class="libServicesTabClass(5)"
+                  >
+                    <b-card>
                       <b-card-text>
-                        <p v-for="(item, index) in interlib_loan_ref" :key="index">
+                        <p v-for="(item, i) in interlib_loan_ref" :key="i">
                           <span v-html="item.title"></span>
                           <span v-html="item.desc"></span>
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Reading Advisory Guidance" :title-link-class="libServicesTabClass(6)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Reading Advisory Guidance" 
+                    :title-link-class="libServicesTabClass(6)"
+                  >
+                    <b-card>
                       <b-card-text>
                         <span v-html="read_adv_guide "></span>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Reference and Information" :title-link-class="libServicesTabClass(7)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Reference and Information" 
+                    :title-link-class="libServicesTabClass(7)"
+                  >
+                    <b-card>
                       <b-card-text>
-                        <p v-for="(item, index) in ref_and_info" :key="index">
+                        <p v-for="(item, j) in ref_and_info" :key="j">
                           <span v-html="item.title"></span>
                           <span v-html="item.desc"></span>
                         </p>
                       </b-card-text>
-                    </b-tab>
-                    <b-tab title="Storytelling and Book Talk" :title-link-class="libServicesTabClass(8)">
+                    </b-card>
+                  </b-tab>
+                  <b-tab 
+                    title="Storytelling and Book Talk" 
+                    :title-link-class="libServicesTabClass(8)"
+                  >
+                    <b-card>
                       <b-card-text>
                         <span v-html="storytell_and_booktalk"></span>
                       </b-card-text>
-                    </b-tab>
-                  </b-tabs>
-                </b-card>
+                    </b-card>
+                  </b-tab>
+                </b-tabs>
               </div>
             </b-tab>
-            <b-tab title="AV Services" :title-link-class="linkClass(2)">
-              <div class="row">
+
+            <b-tab 
+              title="AV Services" 
+              :title-link-class="linkClass(2)"
+            >
+              <b-card>
+              <div class="row av-content">
                 <p>List of the different AV rooms available in the University:</p>
-                <div class="col-md-3"></div>
                 <div class="col-md-7">
                   <div>
-                    <li v-for="(av, index) in avServices" :key="index">{{av.room}}</li>
+                    <li v-for="(av, k) in avServices" :key="k">{{av.room}}</li>
                   </div>
-                  <div class="row mt-2">
-                    <p>For AV Center Services reservation: <a href="https://forms.gle/hLLkxGpaxVUsgj1M9">Click Here</a> </p>
+                  <div class="row text-link">
+                    <p>For AV Center Services reservation: 
+                      <a href="https://forms.gle/hLLkxGpaxVUsgj1M9">Click Here</a> 
+                    </p>
                   </div>
                 </div>
-                <div class="col-md-2"></div>
               </div>
+              </b-card>
             </b-tab>
-            <b-tab title="Tutorials" :title-link-class="linkClass(3)">
 
+            <b-tab title="Tutorials" :title-link-class="linkClass(3)">
                <b-table :items="tutorials">
                  <template #cell(title_and_description)="data">
                   <span v-html="data.value"></span>
@@ -156,7 +227,7 @@
           </b-tabs>
         </b-card>
       </div>
-      <div class="col"></div>
+      <div class="col-md-1"></div>
     </div>
 
   </div>
@@ -385,19 +456,15 @@ export default {
     methods: {
       linkClass: function(idx) {
         if (this.tabIndex === idx) {
-          //text when active
           return ['bg-secondary', 'text-light']
         } else {
-          //text when not active
           return ['bg-light', 'text-dark']
         }
       },
       libServicesTabClass: function(idx) {
         if (this.libServicesTabIndex === idx) {
-          //text when active
           return ['bg-secondary', 'text-light']
         } else {
-          //text when not active
           return ['bg-light', 'text-dark']
         }
       }
@@ -412,5 +479,14 @@ a {
 a:hover {
   color: green;
   text-decoration: none;
+}
+.card-body .card-header{
+  background: white;
+}
+.av-content {
+  padding: 20px;
+}
+.text-link{
+  margin-top: 30px;
 }
 </style>
