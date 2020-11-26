@@ -2,12 +2,11 @@
   <div class="container">
 
     <div class="row">
-      <div class="col col-xs-2"></div>
-      <div class="col-8 col-xs-10">
-        <b-card style="max-width: 100%;" bg-variant="light">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <b-card border-variant="light">
           <b-tabs 
             v-model="tabIndex" 
-            card
             active-nav-item-class="font-weight-bold"
             active-tab-class="text-dark"
             content-class="mt-3"
@@ -18,11 +17,10 @@
             </b-tab>
             <b-tab title="General Setting" :title-link-class="linkClass(1)">
               <div>
-                <b-card no-body>
-                  <b-tabs class="col-md-12" pills card vertical v-model="genSetTabIndx">
+                  <b-tabs pills vertical v-model="genSetTabIndx">
                     <b-tab title="Account" :title-link-class="genSetTabClass(0)">
                       <b-card-text>
-                        <b-container fluid>
+                        <b-card border-variant="dark">
                           <b-row>
                             <b-col sm="4">
                               <label>Contact Number</label>
@@ -55,10 +53,11 @@
                               <b-form-input ref="email" :value="genSetting.email"></b-form-input>
                             </b-col>
                           </b-row>
-                        </b-container>
+                        </b-card>
                       </b-card-text>
                     </b-tab>
                     <b-tab title="Notification" :title-link-class="genSetTabClass(1)">
+                      <b-card border-variant="dark">
                       <b-card-text style="text-align: left">
                         <b-form-group>
                           <b-form-checkbox-group id="checkbox-group-2" v-model="selected_notif" name="notif">
@@ -85,19 +84,19 @@
                           </b-form-checkbox-group>
                         </b-form-group>
                       </b-card-text>
+                      </b-card>
                     </b-tab>
                     <b-tab title="Payment Method" :title-link-class="genSetTabClass(2)">
+                      <b-card border-variant="dark">
                       <b-card-text style="text-align: left">
                          <div>
-                           <b-form-group label="Individual radios" label-for="radio-1">
+                           <b-form-group>
                             <b-form-radio id="radio-1" v-model="selected_paymentMethod" value="cash">
                               <p>Cash</p>
                             </b-form-radio>
-                           </b-form-group>
-                           <b-form-group label="Individual radios"  label-for="radio-">
                             <b-form-radio id="radio-2" v-model="selected_paymentMethod" value="ePayment">
                               <p>E-payment</p>
-                              <ul>
+                              <ul class="links">
                                 <li><a href="https://www.gcash.com/">Link G-Cash</a></li>
                                 <li><a href="https://www.paymaya.com/">Add Paymaya</a></li>
                                 <li><a href="https://www.paypal.com/ph/signin">Add Paypal</a></li>
@@ -106,22 +105,18 @@
                            </b-form-group>
                         </div>
                       </b-card-text>
+                      </b-card>
                     </b-tab>
                   </b-tabs>
-                </b-card>
               </div>
-              <div class="row">
-                <div class="col-7"></div>
-                <div class="col-5">
-                  <b-button v-on:click="save" variant="secondary">Save</b-button>
-                  <b-button variant="light">Cancel</b-button>
-                </div>
+              <div class="row buttons">
+                <b-button pill v-on:click="save" variant="secondary">Save</b-button>
+                <b-button pill variant="light">Cancel</b-button>
               </div>
             </b-tab>
             <b-tab title="Account Activity" :title-link-class="linkClass(2)">
               <div>
-                <b-card no-body>
-                  <b-tabs class="col-md-12" pills card vertical v-model="accActTabIndx">
+                  <b-tabs pills vertical v-model="accActTabIndx">
                     <b-tab title="Loans" :title-link-class="accActTabClass(0)">
                       <b-card-text>
                         <div>
@@ -144,13 +139,12 @@
                       </b-card-text>
                     </b-tab>
                   </b-tabs>
-                </b-card>
               </div>
             </b-tab>
           </b-tabs>
         </b-card>
       </div>
-      <div class="col col-xs-2"></div>
+      <div class="col-md-1"></div>
     </div>
 
   </div>
@@ -272,5 +266,23 @@ a {
 a:hover {
   color: green;
   text-decoration: none;
+}
+/* .card {
+  border: none;
+} */
+.card-body .card-header{
+  background: white;
+}
+.buttons {
+  float: right;
+}
+.buttons .btn {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 5px;
+}
+.links {
+  margin-top: -10px;
+  margin-left: 20px;
 }
 </style>
