@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <AdminFilter></AdminFilter>
-    <ResultAdmin v-bind:users="admins">
-        <h5 slot="header">Admin Accounts</h5>
-    </ResultAdmin>
+    <ResultAdmin v-bind:users="admins"></ResultAdmin>
   </v-app>
 </template>
 <style scoped>

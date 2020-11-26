@@ -1,17 +1,15 @@
 <template>
   <v-app>
     <FilterStudent></FilterStudent>
-    <ResultStudent v-bind:users="students">
-      <h5 slot="header">Student Accounts</h5>
-    </ResultStudent>
+    <ResultStudent v-bind:users="students"></ResultStudent>
   </v-app>
 </template>
 
 <style scoped>
-  h5{
-    font-size: 16px;
-    margin: 0px 0px 10px 10px;
-  }
+h5 {
+  font-size: 16px;
+  margin: 0px 0px 10px 10px;
+}
 </style>
 
 <script>
@@ -23,8 +21,8 @@ export default {
     FilterStudent,
     ResultStudent,
   },
-  data(){
-    return{
+  data() {
+    return {
       students: [
         {
           id: "00000",
@@ -40,7 +38,7 @@ export default {
           course: "Chef",
           email: "xiangling@gmail.com",
           contact: "712635",
-          status: "suspended"
+          status: "suspended",
         },
         {
           id: "00002",
@@ -48,10 +46,10 @@ export default {
           course: "Librarian",
           email: "xingqui@gmail.com",
           contact: "712635",
-          status: "active"
-        }
-      ]
-    }
-  }
+          status: "active",
+        },
+      ],
+    };
+  },
 };
 </script>

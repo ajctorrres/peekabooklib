@@ -1,5 +1,6 @@
 <template>
   <AdminMgmtResult>
+    <h5 slot="header">Faculty Accounts</h5>
     <tbody slot="resultBody">
       <tr v-for="user in users" v-bind:key="user.id">
         <td>{{ user.id }}</td>

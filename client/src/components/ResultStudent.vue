@@ -1,5 +1,6 @@
 <template>
   <AdminMgmtResult>
+    <h5 slot="header">Student Accounts</h5>
     <th slot="courseCol" class="text-left" style="font-size: 14px">Course</th>
     <tbody slot="resultBody">
       <tr v-for="user in users" v-bind:key="user.id">

@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <FilterFaculty></FilterFaculty>
-    <ResultFaculty v-bind:users="faculties">
-        <h5 slot="header">Faculty Accounts</h5>
-    </ResultFaculty>
+    <ResultFaculty v-bind:users="faculties"></ResultFaculty>
   </v-app>
 </template>
 <style scoped>

@@ -1,6 +1,5 @@
 <template>
-  <v-app>
-    <div class="v-container">
+    <v-container>
       <div class="v-row">
         <h5 class="header">Monthly Summary</h5>
         <b-card-group deck>
@@ -93,8 +92,7 @@
           </v-col>
         </v-row>
       </div>
-    </div>
-  </v-app>
+    </v-container>
 </template>
 
 
@@ -142,11 +140,8 @@ export default {
 };
 </script>
 <style scoped>
-.v-container {
-  margin: 40px 120px 220px 120px;
-}
 .v-row {
-  margin: 40px 10px 60px 10px;
+  margin: 0px 10px 60px 10px;
   text-align: left;
 }
 .header {

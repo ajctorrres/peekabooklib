@@ -1,5 +1,6 @@
 <template>
   <AdminMgmtResult>
+    <h5 slot="header">Admin Accounts</h5>
     <th slot="campusCol" class="text-left" style="font-size: 14px">Campus</th>
     <th slot="edit" class="text-left" style="font-size: 14px">Option</th>
     <tbody slot="resultBody">
