@@ -65,7 +65,7 @@ const routes = [
   },
   {
     path: '/account/profile',
-    name: 'Account',
+    name: 'Admin Account',
     component: () => import('../views/AdminProfileAccount.vue')
   }
 ]
