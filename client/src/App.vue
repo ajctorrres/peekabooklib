@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/services">Services</router-link> |
       <router-link to="/library">Library</router-link> |
       <router-link to="/mysaved">My Saved</router-link> |
       <router-link to="/account">Account</router-link>
-    </div>
-    <router-view />
+    </div> -->
+    <AdminNav>
+      <span slot="content">
+        <router-view />
+      </span>
+    </AdminNav>
   </div>
 </template>
 
@@ -33,3 +37,11 @@
   color: #42b983;
 }
 </style>
+
+<script>
+import AdminNav from './components/AdminNav.vue'
+export default {
+  components: { AdminNav },
+  
+}
+</script>
