@@ -62,6 +62,11 @@ const routes = [
     path: '/account/activity',
     name: 'Account Activity',
     component: () => import('../views/AdminActivity.vue')
+  },
+  {
+    path: '/account/profile',
+    name: 'Account',
+    component: () => import('../views/AdminProfileAccount.vue')
   }
 ]
 
