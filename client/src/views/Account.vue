@@ -221,28 +221,22 @@ export default {
     methods: {
       linkClass: function(idx) {
         if (this.tabIndex === idx) {
-          //text when active
           return ['bg-secondary', 'text-light']
         } else {
-          //text when not active
           return ['bg-light', 'text-dark']
         }
       },
       genSetTabClass: function(idx) {
         if (this.genSetTabIndx === idx) {
-          //text when active
           return ['bg-secondary', 'text-light']
         } else {
-          //text when not active
           return ['bg-light', 'text-dark']
         }
       },
       accActTabClass: function(idx) {
         if (this.accActTabIndx === idx) {
-          //text when active
           return ['bg-secondary', 'text-light']
         } else {
-          //text when not active
           return ['bg-light', 'text-dark']
         }
       },
