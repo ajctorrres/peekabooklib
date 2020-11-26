@@ -14,37 +14,7 @@
             align="left"
           >
             <b-tab title="Profile" :title-link-class="linkClass(0)">
-              <div class="row">
-                <div class="col-4">
-                  <b-img  
-                    v-bind="mainProps" 
-                    rounded
-                    alt="Rounded image"
-                    contain
-                    height= "200%"
-                    width= "200%"
-                  ></b-img>
-                </div>
-                <div class="col-md-8">
-                  <b-card
-                    style="max-width: 100%;" 
-                    bg-variant="light"
-                  >
-                    <b-card-header style="text-align:left;">
-                      <h5><v-icon left large color='black'>fas fa-user</v-icon>Student Profile</h5>
-                    </b-card-header>
-                    <b-card-text style="text-align:left; margin-top: 5%">
-                      <p>Name: {{profile.name}}</p>
-                      <p>Student ID: {{profile.studId}}</p>
-                      <p>Date of Birth: {{profile.dob}}</p>
-                      <p>Department: {{profile.dept}}</p>
-                      <p>Program: {{profile.prog}}</p>
-                      <p>Year Level: {{profile.yrLvl}}</p>
-                      <p>Student Type: {{profile.studType}}</p>
-                    </b-card-text>
-                  </b-card>
-                </div> 
-              </div>
+                <UserProfile></UserProfile>
             </b-tab>
             <b-tab title="General Setting" :title-link-class="linkClass(1)">
               <div>
@@ -188,7 +158,16 @@
 
 
 <script>
+import UserProfile from '../components/UserProfile'
+
 export default {
+  components: {
+    UserProfile
+  },
+  name: 'Account',
+  component: {
+    UserProfile
+  },
     data() {
       return {
         tabIndex: 0,
