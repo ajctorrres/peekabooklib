@@ -88,7 +88,7 @@ export default {
   name: "AccountProfile",
   props: {
     user: {
-      type: Array,
+      type: Object,
     },
   },
 };
