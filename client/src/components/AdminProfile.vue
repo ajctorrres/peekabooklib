@@ -33,12 +33,32 @@
             <p>Password</p>
           </v-col>
           <v-col cols="9">
-            <p>
-                {{ user.password }}
-                <v-btn icon small class="float-right">
-                    <v-icon medium>mdi-pencil-outline</v-icon>
+            <span v-if="editPass">
+              <v-text-field v-bind:value="user.password">
+                <v-btn icon slot="append">
+                  <v-icon>mdi-check-bold</v-icon>
                 </v-btn>
-            </p>
+                <v-btn
+                  icon
+                  slot="append"
+                  v-on:click="edittablePass()"
+                >
+                  <v-icon>mdi-close-thick</v-icon>
+                </v-btn>
+              </v-text-field>
+            </span>
+            <span v-else>
+              <p>
+                {{ user.password }}
+                <v-btn
+                  icon
+                  class="float-right"
+                  v-on:click="edittablePass()"
+                >
+                  <v-icon>mdi-pencil-outline</v-icon>
+                </v-btn>
+              </p>
+            </span>
           </v-col>
         </v-row>
         <v-row>
@@ -46,12 +66,32 @@
             <p>Contact</p>
           </v-col>
           <v-col cols="9">
-            <p>
-                {{ user.contact }}
-                <v-btn icon small class="float-right">
-                    <v-icon medium>mdi-pencil-outline</v-icon>
+            <span v-if="editContact">
+              <v-text-field v-bind:value="user.contact">
+                <v-btn icon slot="append">
+                  <v-icon>mdi-check-bold</v-icon>
                 </v-btn>
-            </p>
+                <v-btn
+                  icon
+                  slot="append"
+                  v-on:click="edittableContact()"
+                >
+                  <v-icon>mdi-close-thick</v-icon>
+                </v-btn>
+              </v-text-field>
+            </span>
+            <span v-else>
+              <p>
+                {{ user.contact }}
+                <v-btn
+                  icon
+                  class="float-right"
+                  v-on:click="edittableContact()"
+                >
+                  <v-icon>mdi-pencil-outline</v-icon>
+                </v-btn>
+              </p>
+            </span>
           </v-col>
         </v-row>
       </span>
@@ -101,7 +141,17 @@ export default {
         pic:
           "https://i.pinimg.com/736x/2b/5e/7a/2b5e7a98d33396b0cbe55c4666a7b107.jpg",
       },
+      editPass: false,
+      editContact: false,
     };
+  },
+  methods: {
+    edittablePass: function () {
+      this.editPass = !this.editPass;
+    },
+    edittableContact: function () {
+      this.editContact = !this.editContact;
+    },
   },
 };
 </script>
