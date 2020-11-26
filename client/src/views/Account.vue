@@ -161,11 +161,8 @@
 import UserProfile from '../components/UserProfile'
 
 export default {
-  components: {
-    UserProfile
-  },
   name: 'Account',
-  component: {
+  components: {
     UserProfile
   },
     data() {
