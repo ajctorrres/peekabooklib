@@ -7,19 +7,26 @@
       app
     >
       <v-list-item>
-        <v-list-item-content>
+        <v-list-item-content class="mt-2 ml-2">
           <v-list-item-title class="title"> PEEKABOOK </v-list-item-title>
+          <v-list-item-subtitle>
+            USC Library Management System
+          </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item-group>
+        <v-list-item-group color="blue">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-view-dashboard</v-icon>
             </v-list-item-icon>
-            <v-list-item-content> <router-link to="/dashboard">Dashboard</router-link></v-list-item-content>
+            <v-list-item-content>
+              <router-link to="/dashboard"
+                >Dashboard</router-link
+              ></v-list-item-content
+            >
           </v-list-item>
 
           <v-list-group>
@@ -30,13 +37,16 @@
               <v-list-item-content> Resources </v-list-item-content>
             </template>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> Resource List </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                Resource List
+              </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> Add Resource </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                Add Resource
+              </v-list-item-content>
             </v-list-item>
           </v-list-group>
-
 
           <v-list-group>
             <template v-slot:activator>
@@ -46,16 +56,25 @@
               <v-list-item-content> Accounts </v-list-item-content>
             </template>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> <router-link to="/acc-mgmt/student">Student Accounts</router-link> </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                <router-link to="/acc-mgmt/student"
+                  >Student Accounts</router-link
+                >
+              </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> <router-link to="/acc-mgmt/faculty">Faculty Accounts</router-link> </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                <router-link to="/acc-mgmt/faculty"
+                  >Faculty Accounts</router-link
+                >
+              </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> <router-link to="/acc-mgmt/admin">Admin Accounts</router-link> </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                <router-link to="/acc-mgmt/admin">Admin Accounts</router-link>
+              </v-list-item-content>
             </v-list-item>
           </v-list-group>
-
 
           <v-list-group>
             <template v-slot:activator>
@@ -65,10 +84,14 @@
               <v-list-item-content> Transactions </v-list-item-content>
             </template>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> View Transaction </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                View Transaction
+              </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item"> Archive </v-list-item-content>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                Archive
+              </v-list-item-content>
             </v-list-item>
           </v-list-group>
         </v-list-item-group>
@@ -110,8 +133,8 @@
   </v-app>
 </template>
 <style scoped>
-.list-item{
-    font-size: 13px;
+.list-item {
+  font-size: 13px;
 }
 </style>
 <script>
