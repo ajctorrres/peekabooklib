@@ -38,6 +38,36 @@ const routes = [
     path: '/mysaved',
     name: 'MySaved',
     component: () => import('../views/MySaved.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('../views/Dashboard.vue')
+  },
+  {
+    path: '/acc-mgmt/student',
+    name: 'Manage Student',
+    component: () => import('../views/AccMgmtStudent.vue')
+  },
+  {
+    path: '/acc-mgmt/faculty',
+    name: 'Manage Faculty',
+    component: () => import('../views/AccMgmtFaculty.vue')
+  },
+  {
+    path: '/acc-mgmt/admin',
+    name: 'Manage Admin',
+    component: () => import('../views/AccMgmtAdmin.vue')
+  },
+  {
+    path: '/account/activity',
+    name: 'Account Activity',
+    component: () => import('../views/AdminActivity.vue')
+  },
+  {
+    path: '/account/profile',
+    name: 'Admin Account',
+    component: () => import('../views/AdminProfileAccount.vue')
   }
 ]
 

@@ -10,15 +10,23 @@
     </div> -->
     <Navigation />
     <router-view />
+    
+    <AdminNav>
+      <span slot="content">
+        <router-view />
+      </span>
+    </AdminNav>
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation.vue'
+import AdminNav from './components/AdminNav.vue'
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    AdminNav 
   }
 }
 </script>
