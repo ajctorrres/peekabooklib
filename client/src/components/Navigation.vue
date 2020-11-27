@@ -9,17 +9,17 @@
                 <b-collapse id="nav-text-collapse" is-nav>
                     <b-navbar-nav id="leftNav">
                         <b-nav-item href="/">Home</b-nav-item>
-                        <b-nav-item href="Library/">Library</b-nav-item>
-                        <b-nav-item href="Services/">Services</b-nav-item>
+                        <b-nav-item href="/library">Library</b-nav-item>
+                        <b-nav-item href="/services">Services</b-nav-item>
                     </b-navbar-nav>
 
                     <b-navbar-nav id="rightNav" class="ml-auto">
                         <b-nav-item href="#"><b-icon icon="bell" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span>Notification</span></b-nav-item>
-                        <b-nav-item href="MySaved/"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span>My Saved Books</span></b-nav-item>
-                        <b-nav-item href="Account/"><b-avatar variant="dark"></b-avatar><span>Account</span></b-nav-item>
+                        <b-nav-item href="/mysaved"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span>My Saved Books</span></b-nav-item>
+                        <b-nav-item href="/account"><b-avatar variant="dark"></b-avatar><span>Account</span></b-nav-item>
                         <b-nav-text>Welcome, User</b-nav-text>
                         <b-nav-item-dropdown right> 
-                            <b-dropdown-item href="#">Profile</b-dropdown-item>
+                            <b-dropdown-item href="/account">Profile</b-dropdown-item>
                             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </b-navbar-nav>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 #headlogo{
   width:100%;

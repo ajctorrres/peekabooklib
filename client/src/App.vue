@@ -1,32 +1,24 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/services">Services</router-link> |
-      <router-link to="/library">Library</router-link> |
-      <router-link to="/mysaved">My Saved</router-link> |
-      <router-link to="/account">Account</router-link>
-    </div> -->
     <Navigation />
     <router-view />
     
-    <AdminNav>
+    <!-- <AdminNav>
       <span slot="content">
         <router-view />
       </span>
-    </AdminNav>
+    </AdminNav> -->
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation.vue'
-import AdminNav from './components/AdminNav.vue'
+// import AdminNav from './components/AdminNav.vue'
 
 export default {
   components: {
     Navigation,
-    AdminNav 
+    // AdminNav 
   }
 }
 </script>

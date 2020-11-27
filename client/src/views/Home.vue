@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Search />
-    <BookDisplay />
+    <BookDisplay /> 
   </div>
 </template>
 
