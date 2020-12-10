@@ -14,9 +14,9 @@
                     </b-navbar-nav>
 
                     <b-navbar-nav id="rightNav" class="ml-auto">
-                        <b-nav-item href="#"><b-icon icon="bell" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span>Notification</span></b-nav-item>
-                        <b-nav-item href="/mysaved"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span>My Saved Books</span></b-nav-item>
-                        <b-nav-item href="/account"><b-avatar variant="dark"></b-avatar><span>Account</span></b-nav-item>
+                        <b-nav-item href="#"><b-icon icon="bell" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span class="navName">Notification</span></b-nav-item>
+                        <b-nav-item href="/mysaved"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span class="navName">My Saved Books</span></b-nav-item>
+                        <b-nav-item href="/account"><b-avatar variant="dark"></b-avatar><span class="navName">Account</span></b-nav-item>
                         <b-nav-text>Welcome, User</b-nav-text>
                         <b-nav-item-dropdown right> 
                             <b-dropdown-item href="/account">Profile</b-dropdown-item>
@@ -68,7 +68,7 @@ export default {
     margin-left: 1.5em; 
 }
 
-span{
+.navName{
   display: none;
   /* padding: .5em; */
 

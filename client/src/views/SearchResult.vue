@@ -1,20 +1,25 @@
 <template>
   <div class="search-result">
-    <h1>This is the Resources page</h1>
     <Search />
+    <Filters />
   </div>
 </template>
 
 
 <script>
 import Search from '@/components/Search.vue'
+import Filters from '@/components/Filters.vue'
 
 export default {
   name: 'SearchResult',
   components: {
-    Search
+    Search,
+    Filters
   }
+
 }
 
 </script>
-<style></style>
+<style scoped>
+
+</style>

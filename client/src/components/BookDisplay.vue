@@ -1,25 +1,12 @@
 <template>
     <div id="bookDisplay">
-<!-- 
-        <vueper-slides
-        class="no-shadow"
-        :visible-slides="3"
-        slide-multiple
-        :gap="3"
-        :slide-ratio="1 / 4"
-        :dragging-distance="200"
-        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
-        
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-
-        </vueper-slides> -->
         <vueper-slides
             class="no-shadow"
-            :visible-slides="6"
-            :arrows="false"
-            :slide-ratio="1 / 4"
+            :visible-slides="4"
+            slide-multiple
+            :breakpoints="breakpoints"
             :gap="3"
-            :dragging-distance="70">
+            :dragging-distance="50">
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
         </vueper-slides>
     </div>
@@ -41,8 +28,32 @@ export default {
             { image: require('../assets/books/hp4.jpg') },
             { image: require('../assets/books/hp5.jpg') },
             { image: require('../assets/books/hp6.jpg') },
+            { image: require('../assets/books/hp7.jpg') },
+            { image: require('../assets/books/hp1.jpg') },
+            { image: require('../assets/books/hp2.jpg') },
+            { image: require('../assets/books/hp3.jpg') },
+            { image: require('../assets/books/hp4.jpg') },
+            { image: require('../assets/books/hp5.jpg') },
+            { image: require('../assets/books/hp6.jpg') },
             { image: require('../assets/books/hp7.jpg') }
-        ]
+        ],
+        breakpoints: {
+            1200: {
+                slideRatio: 1 / 4
+            },
+            900: {
+                slideRatio: 1 / 4
+            },
+            600: {
+                slideRatio: 1 / 2,
+                arrows: false,
+                bulletsOutside: true
+            },
+            // The order you list breakpoints does not matter, Vueper Slides will sort them for you.
+            1100: {
+                slideRatio: 1 / 4
+            }
+        }
     })
     
 }
@@ -57,7 +68,5 @@ export default {
     margin-bottom: 5em;
     padding: auto;
 }
-
-
 
 </style>

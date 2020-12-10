@@ -2,18 +2,18 @@
   <div class="search">
     <div>
       <b-nav tabs class="sub-nav">
-        <b-nav-item href="#" active>Webliography</b-nav-item>
+        <b-nav-item href="#">Webliography</b-nav-item>
         <b-nav-item href="#">Electronic Resources</b-nav-item>
         <b-nav-item href="#">DSpace</b-nav-item>
-        <b-nav-item href="#">Advanced Search</b-nav-item>
+        <b-nav-item href="#" active>Advanced Search</b-nav-item>
       </b-nav>
     </div>
     
     <div class="searchBar">
       <b-form inline> 
         <b-form-input v-model="form.name" placeholder="Search Title, Author, Keyword" required></b-form-input>
-        <b-form-select class="custom-select" id="types" v-model="form.types" :options="types" required>{{types}}</b-form-select>
-        <b-link href="Resources/"><b-icon icon="search" variant="dark" aria-hidden="true" scale="1.2" class="mt-2"></b-icon></b-link>
+        <b-form-select class="custom-select" id="types" v-model="form.types" :options="types" required>{{selected}}</b-form-select>
+        <b-link href="/searchResult" v-on:click="changeStyle"><b-icon icon="search" variant="dark" aria-hidden="true" scale="1.2" class="mt-2"></b-icon></b-link>
       </b-form> 
     </div>
   </div>
@@ -29,6 +29,7 @@ export default {
         name: '',
         types: 'Books',
       },
+      selected:'Book',
       types: [
         { value: 'Book', text: 'Books' },
         { value: 'Journal', text: 'Journals' },
@@ -38,6 +39,9 @@ export default {
       ],
       show:true
     }
+  },
+  methods: {
+
   }
 }
 </script>
@@ -97,5 +101,17 @@ button{
 @media screen and (min-width: 400px){
   
 }
+
+/* on click button, apply css style */
+/* .search{
+  width: 60%;
+  margin-left: 35%;
+  margin-top: 2em;
+}
+
+.searchBar{
+  height: 3.5em;
+
+} */
 
 </style>

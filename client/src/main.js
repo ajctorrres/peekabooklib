@@ -6,29 +6,19 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
-import { BootstrapVue, BIcon, BIconBell, BIconBookmarkHeartFill, BIconSearch, BIconCaretDownFill, IconsPlugin} from 'bootstrap-vue'
+import { BootstrapVue, BIcon, BIconBell, BIconBookmarkHeartFill, BIconBookmarkHeart, BIconSearch, BIconCaretDownFill, BIconBookmark, BIconBookmarkFill} from 'bootstrap-vue'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
-
 Vue.use(BootstrapVue)
 Vue.component('BIcon', BIcon)
 Vue.component('BIconBell', BIconBell)
+Vue.component('BIconBookmarkHeart', BIconBookmarkHeart)
 Vue.component('BIconBookmarkHeartFill', BIconBookmarkHeartFill)
 Vue.component('BIconSearch', BIconSearch)
 Vue.component('BIconCaretDownFill', BIconCaretDownFill)
-Vue.use(IconsPlugin)
-Vue.use(vuetify)
-
-// src/plugins/vuetify.js
-
-import '@fortawesome/fontawesome-free/css/all.css'
-
-Vue.use(vuetify, {
-  iconfont: 'fa'
-})
+Vue.component('BIconBookmark', BIconBookmark)
+Vue.component('BIconBookmarkFill', BIconBookmarkFill)
 
 new Vue({
   router,

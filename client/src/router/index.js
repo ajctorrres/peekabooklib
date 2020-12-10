@@ -41,6 +41,11 @@ const routes = [
     component: () => import('../views/MySaved.vue')
   },
   {
+    path: '/searchResult',
+    name: 'SearchResult',
+    component: () => import('../views/SearchResult.vue')
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('../views/Dashboard.vue')
