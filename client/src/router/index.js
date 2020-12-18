@@ -41,6 +41,11 @@ const routes = [
     component: () => import('../views/MySaved.vue')
   },
   {
+    path: '/checkOut',
+    name: 'CheckOut',
+    component: () => import('../views/CheckOut.vue')
+  },
+  {
     path: '/searchResult',
     name: 'SearchResult',
     component: () => import('../views/SearchResult.vue')
@@ -74,7 +79,13 @@ const routes = [
     path: '/account/profile',
     name: 'Admin Account',
     component: () => import('../views/AdminProfileAccount.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   }
+
 ]
 
 const router = new VueRouter({

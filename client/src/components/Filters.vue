@@ -49,7 +49,7 @@
             </b-col>
           </b-row>
           <hr>
-          <!-- <b-row>
+          <b-row>
             <b-col cols="3" align-self="center" class="d-flex justify-content-center">
               <img src="../assets/books/hp2.jpg" alt="Harry Potter and the Chamber of Secrets">
             </b-col>
@@ -64,7 +64,7 @@
             </b-col>
             <b-col cols="1">
               <b-button v-b-tooltip.hover title="Add to My Collection">
-                <b-icon icon="bookmark" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+                <b-icon icon="bookmark-heart" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
               </b-button>
             </b-col>
           </b-row>
@@ -83,11 +83,11 @@
               <p>Location:Talamban Campus</p>
             </b-col>
             <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="outline-secondary">
-                <b-icon icon="bookmark" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill">
+                <b-icon :icon="fill ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
               </b-button>
             </b-col>
-          </b-row> -->
+          </b-row>
       </div>
     </div>
     <div class="mt-4 mr-5">
@@ -150,6 +150,7 @@ export default {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
+  font-family: 'Nunito', sans-serif;
 }
 
 .filter{

@@ -1,9 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is a my saved page</h1>
+  <div class="collections">
+    <Collection />
   </div>
 </template>
 
+<script>
+import Collection from '@/components/Collection.vue'
 
-<script></script>
-<style></style>
+export default {
+  name: 'MySaved',
+  components: {
+    Collection
+  },
+ 
+}
+
+</script>
+<style scoped>
+
+</style>

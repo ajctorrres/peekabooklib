@@ -20,7 +20,7 @@
                         <b-nav-text>Welcome, User</b-nav-text>
                         <b-nav-item-dropdown right> 
                             <b-dropdown-item href="/account">Profile</b-dropdown-item>
-                            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+                            <b-dropdown-item href="/">Sign Out</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </b-navbar-nav>
                 </b-collapse>
@@ -36,7 +36,6 @@ export default {
 </script>
 
 <style scoped>
-
 #headlogo{
   width:100%;
   height: 10em;
@@ -47,21 +46,28 @@ export default {
 }
 
 #navbar{
-    background: #40798C;
+    background: #387e8c;
 }
 
 #leftNav{
-    font-size: 1.2em;
+    font-size: 1.5em;
     width: 50%;
     justify-content: space-evenly;
 }
 
 #rightNav{
-    margin-right: 1.5em;
+    margin-right: 2em;
 }
 .navbar-light .navbar-nav .nav-link{
+    padding: .5em;
+    color: #fff;
+    font-family: 'Sniglet', cursive;
+    /* font-family: 'Nunito', sans-serif; */
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
   padding: .5em;
-  color: #fff;
+  color: #153136;
 }
 
 #rightNav li{
@@ -75,17 +81,21 @@ export default {
 }
 
 svg{
-    color:#CFE0C3;
+    color:#fff;
 }
 
-
+svg:hover{
+    color: #153136;
+}
 .navbar-text{
     margin: auto;
+    color: #fff;
 }
 
 .navbar-brand{
     display: none;
 }
+
 
 @media screen and (max-width:600px){
     #headlogo{
