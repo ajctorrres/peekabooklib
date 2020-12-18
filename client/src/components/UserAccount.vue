@@ -180,7 +180,7 @@
                   <b-tab title="Loans" :title-link-class="accActTabClass(0)">
                     <b-card-text>
                       <div>
-                        <b-table responsive :items="loans"></b-table>
+                        <b-table responsive :items="current_loans"></b-table>
                       </div>
                     </b-card-text>
                   </b-tab>
@@ -239,42 +239,49 @@ export default {
         studType: "???",
       },
       genSetting: {
-        contactNum: "01234353523",
-        homeAdd: "earth",
-        deliveryAdd: "balay",
-        email: "student@gmail.com",
+        contactNum: "09542863741",
+        homeAdd: "Banilad Mandaue City",
+        deliveryAdd: "IT Park",
+        email: "18423506@gmail.com",
       },
       selected_notif: [],
       selected_paymentMethod: [],
+      current_loans: [
+        {
+          book_title: "Harry Potter and the Sorcerer's Stone",
+          date_borrowed: "12-19-2020",
+          due_date: "12-29-2020",
+        }
+      ],
+      fines: [
+        {
+          item_borrowed: "Harry Potter and the Half Blood Prince",
+          overdue_fine: "Php 50.00",
+        },
+        {
+          item_borrowed: "Dell laptop",
+          overdue_fine: "Php 100.00",
+        },
+        {
+          item_borrowed: "Mac laptop",
+          overdue_fine: "Php 150.00",
+        },
+      ],
       loans: [
         {
-          book_title: "sample 1",
+          book_title: "Harry Potter and the Sorcerer's Stone",
           date_borrowed: "11-20-2020",
           due_date: "11-27-2020",
         },
         {
-          book_title: "sample 2",
+          book_title: "Harry Potter and the Goblet of Fire",
           date_borrowed: "11-21-2020",
           due_date: "11-28-2020",
         },
         {
-          book_title: "sample 3",
+          book_title: "Harry Potter and the Deathly Hallows",
           date_borrowed: "11-22-2020",
           due_date: "11-29-2020",
-        },
-      ],
-      fines: [
-        {
-          item_borrowed: "book #1",
-          overdue_fine: "Php xx.xx",
-        },
-        {
-          item_borrowed: "laptop #1",
-          overdue_fine: "Php xxx.xx",
-        },
-        {
-          item_borrowed: "book #1",
-          overdue_fine: "Php xx.xx",
         },
       ],
     };

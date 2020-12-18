@@ -38,7 +38,8 @@
             </template>
             <v-list-item>
               <v-list-item-content class="ml-10 pl-4 list-item">
-                Resource List
+                 <router-link to="/resources/collection"
+                  >Resource List</router-link>
               </v-list-item-content>
             </v-list-item>
             <v-list-item>
