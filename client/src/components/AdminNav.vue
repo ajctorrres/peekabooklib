@@ -103,11 +103,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn small icon class="ma-1">
-        <v-icon>mdi-bell</v-icon>
-      </v-btn>
-
-      <v-menu offset-y>
+      <!-- <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn v-on="on" icon class="ma-1">
             <v-icon>mdi-account-circle</v-icon>
@@ -120,10 +116,22 @@
           <v-list-item
             ><router-link to="/account/activity">Activity</router-link>
           </v-list-item>
-          <v-list-item>Logout</v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu> -->
       <!-- <p class="pt-4 ml-1 mr-4"> Admin </p> -->
+      <router-link to="/account/activity">
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-account-clock</v-icon>
+      </v-btn>
+      </router-link>
+      <router-link to="/account/profile">
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-account-circle</v-icon>
+      </v-btn>
+      </router-link>
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main class="ma-5">
