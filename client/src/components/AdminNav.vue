@@ -33,9 +33,10 @@
               </v-list-item-icon>
               <v-list-item-content style="color: #DAF5FB; font-size:14px" > Resources </v-list-item-content>
             </template>
-            <v-list-item >
-              <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
-                Resource List
+            <v-list-item>
+              <v-list-item-content class="ml-10 pl-4 list-item">
+                 <router-link to="/resources/collection"
+                  >Resource List</router-link>
               </v-list-item-content>
             </v-list-item>
             <v-list-item>

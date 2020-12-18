@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
-import { BootstrapVue, BIcon, BIconBell, BIconBookmarkHeartFill, BIconBookmarkHeart, BIconSearch, BIconCaretDownFill, BIconBookmark, BIconBookmarkFill} from 'bootstrap-vue'
+import { BootstrapVue, BIcon, BIconBell, BIconBookmarkHeartFill, BIconBookmarkHeart, BIconSearch, BIconCaretDownFill, BIconBookmark, BIconBookmarkFill, BIconLockFill, BIconPersonFill, BIconTrashFill} from 'bootstrap-vue'
 
 
 Vue.config.productionTip = false
@@ -19,6 +19,10 @@ Vue.component('BIconSearch', BIconSearch)
 Vue.component('BIconCaretDownFill', BIconCaretDownFill)
 Vue.component('BIconBookmark', BIconBookmark)
 Vue.component('BIconBookmarkFill', BIconBookmarkFill)
+Vue.component('BIconLockFill', BIconLockFill)
+Vue.component('BIconPersonFill', BIconPersonFill)
+Vue.component('BIconTrashFill', BIconTrashFill)
+
 
 new Vue({
   router,

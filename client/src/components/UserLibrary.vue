@@ -306,7 +306,8 @@ i.v-icon.v-icon {
   color: grey;
 } 
 .active{ 
-  background-color: #6c757d ;
+  /* background-color: #464a4d ; */
+  background-color: #387e8c;
 }
 .libCamp {
   width: 100%; 

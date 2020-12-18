@@ -53,7 +53,7 @@ export default {
   width: 75%;
   margin: auto;
   margin-top: 2em;
-
+  font-family: 'Nunito', sans-serif;
 }
 
 .searchBar{
