@@ -10,9 +10,9 @@
     >
     </b-form-checkbox>
       <figure class="figure">
-        <img src="../assets/books/hp2.jpg" class="figure-img img-fluid z-depth-1"
+        <img src="../assets/books/hp1.jpg" class="figure-img img-fluid z-depth-1"
           alt="..." style="width: 400px">
-        <figcaption class="figure-caption">Harry Potter and the Chambers of Secrets<br>by J.K Rowling</figcaption>
+        <figcaption class="figure-caption">Harry Potter and the Philosopher's Stone<br>by J.K Rowling</figcaption>
       </figure>
       <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill" class="add"> 
         <b-icon :icon="fill ? 'bookmark-heart' : 'bookmark-heart-fill'" aria-hidden="true" scale="1.5"></b-icon>
@@ -32,8 +32,8 @@
           alt="..." style="width: 400px">
         <figcaption class="figure-caption">Harry Potter and the Chambers of Secrets<br>by J.K Rowling</figcaption>
       </figure>
-      <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill" class="add"> 
-        <b-icon :icon="fill ? 'bookmark-heart' : 'bookmark-heart-fill'" aria-hidden="true" scale="1.5"></b-icon>
+      <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill1 = !fill1" class="add"> 
+        <b-icon :icon="fill1 ? 'bookmark-heart' : 'bookmark-heart-fill'" aria-hidden="true" scale="1.5"></b-icon>
       </b-button>
     </div>
     <div class="single">
@@ -46,12 +46,12 @@
     >
     </b-form-checkbox>
       <figure class="figure">
-        <img src="../assets/books/hp2.jpg" class="figure-img img-fluid z-depth-1"
+        <img src="../assets/books/hp3.jpg" class="figure-img img-fluid z-depth-1"
           alt="..." style="width: 400px">
-        <figcaption class="figure-caption">Harry Potter and the Chambers of Secrets<br>by J.K Rowling</figcaption>
+        <figcaption class="figure-caption">Harry Potter and the Prisoner of Azkaban<br>by J.K Rowling</figcaption>
       </figure>
-      <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill" class="add"> 
-        <b-icon :icon="fill ? 'bookmark-heart' : 'bookmark-heart-fill'" aria-hidden="true" scale="1.5"></b-icon>
+      <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill2 = !fill2" class="add"> 
+        <b-icon :icon="fill2 ? 'bookmark-heart' : 'bookmark-heart-fill'" aria-hidden="true" scale="1.5"></b-icon>
       </b-button>
     </div>
     
@@ -72,7 +72,11 @@
           Icon:{
             name: 'bookmark-heart-fill'
           },
-          fill: false
+      fill: false,
+      fill1: false,
+      fill2: false,
+      fill3: false,
+      fill4: false,
         }
       }
   }

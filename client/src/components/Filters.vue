@@ -63,8 +63,8 @@
               <p>Location:Talamban Campus</p>
             </b-col>
             <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection">
-                <b-icon icon="bookmark-heart" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill1 = !fill1">
+                <b-icon :icon="fill1 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
               </b-button>
             </b-col>
           </b-row>
@@ -83,8 +83,48 @@
               <p>Location:Talamban Campus</p>
             </b-col>
             <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill">
-                <b-icon :icon="fill ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill2 = !fill2">
+                <b-icon :icon="fill2 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              </b-button>
+            </b-col>
+          </b-row>
+          <hr>
+          <b-row>
+            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
+              <img src="../assets/books/hp4.jpg" alt="Harry Potter and the Prisoner in Azkaban">
+            </b-col>
+            <b-col cols="8">
+              <h4><strong>Harry Potter and the Goblet of Fire</strong></h4>
+              <p>By J.K. Rowling</p>
+              <p>Bloomsbury Publishing</p>
+              <p>June 1998</p>
+              <p><strong>Location</strong></p>
+              <p>Library:JB-LRC</p>
+              <p>Location:Talamban Campus</p>
+            </b-col>
+            <b-col cols="1">
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill3 = !fill3">
+                <b-icon :icon="fill3 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              </b-button>
+            </b-col>
+          </b-row>
+          <hr>
+          <b-row>
+            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
+              <img src="../assets/books/hp5.jpg" alt="Harry Potter and the Order of the Phoenix">
+            </b-col>
+            <b-col cols="8">
+              <h4><strong>Harry Potter and the Prisoner in Azkaban</strong></h4>
+              <p>By J.K. Rowling</p>
+              <p>Bloomsbury Publishing</p>
+              <p>June 1999</p>
+              <p><strong>Location</strong></p>
+              <p>Library:JB-LRC</p>
+              <p>Location:Talamban Campus</p>
+            </b-col>
+            <b-col cols="1">
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill4 = !fill4">
+                <b-icon :icon="fill4 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
               </b-button>
             </b-col>
           </b-row>
@@ -109,6 +149,10 @@ export default {
         name: 'bookmark-heart'
       },
       fill: false,
+      fill1: false,
+      fill2: false,
+      fill3: false,
+      fill4: false,
       rows: 50,
       currentPage:1,
       selectSort: null,
