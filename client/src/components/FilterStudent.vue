@@ -2,7 +2,7 @@
   <AdminFilter>
     <span slot="additionalFilter">
       <v-row>
-        <v-col cols="2">
+        <v-col cols="2"  class="pa-1 pt-2 pr-2">
           <v-select
             label="Year Level"
             v-bind:items="year_levels"
@@ -13,9 +13,10 @@
             outlined
             hide-details
             return-object
+            height="35px"
           ></v-select>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" class="pa-1 pt-2 pl-1 pr-2">
           <v-select
             v-model="selectedSchool"
             label="School"
@@ -27,10 +28,11 @@
             outlined
             hide-details
             return-object
+            height="35px"
             v-on:change="changeDept(selectedSchool)"
           ></v-select>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4"  class="pa-1 pt-2 pl-1 pr-2">
           <v-select
             label="Department"
             v-bind:items="departments"
@@ -41,9 +43,10 @@
             outlined
             hide-details
             return-object
+            height="35px"
           ></v-select>
         </v-col>
-        <v-col cols="2">
+        <v-col cols="2"  class="pa-1 pt-2 pl-2">
           <v-select
             label="Status"
             v-bind:items="status"
@@ -55,6 +58,7 @@
             hide-details
             return
             object
+            height="35px"
           ></v-select>
         </v-col>
       </v-row>

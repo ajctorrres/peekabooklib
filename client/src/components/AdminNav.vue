@@ -1,15 +1,15 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
-      color="rgb(240, 240, 240)"
+      color="#01A27F"
       floating
       v-model="drawer"
       app
     >
       <v-list-item>
         <v-list-item-content class="mt-2 ml-2">
-          <v-list-item-title class="title"> PEEKABOOK </v-list-item-title>
-          <v-list-item-subtitle>
+          <v-list-item-title class="title" style="color: #DAF5FB"> PEEKABOOK </v-list-item-title>
+          <v-list-item-subtitle style="color: #A8DEF0">
             USC Library Management System
           </v-list-item-subtitle>
         </v-list-item-content>
@@ -17,24 +17,21 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item-group color="blue">
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-view-dashboard</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <router-link to="/dashboard"
-                >Dashboard</router-link
-              ></v-list-item-content
-            >
-          </v-list-item>
-
-          <v-list-group>
-            <template v-slot:activator>
-              <v-list-item-icon>
-                <v-icon>mdi-book-open-page-variant</v-icon>
+        <v-list-item-group>
+          <router-link to="/dashboard" style="color: #C8F0F9">
+            <v-list-item >
+              <v-list-item-icon class="ml-2 ma-0 mt-2 mr-2">
+                <v-icon small style="color: #EDFAFD">mdi-view-dashboard</v-icon>
               </v-list-item-icon>
-              <v-list-item-content> Resources </v-list-item-content>
+              <v-list-item-content style="color: #DAF5FB; font-size:14px" > Dashboard </v-list-item-content>
+            </v-list-item>
+          </router-link>
+          <v-list-group color="white">
+            <template v-slot:activator>
+              <v-list-item-icon class="ml-2 ma-0 mt-2 mr-2">
+                <v-icon small style="color: #EDFAFD">mdi-book-open-page-variant</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content style="color: #DAF5FB; font-size:14px" > Resources </v-list-item-content>
             </template>
             <v-list-item>
               <v-list-item-content class="ml-10 pl-4 list-item">
@@ -43,54 +40,56 @@
               </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
+              <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
                 Add Resource
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
 
-          <v-list-group>
+          <v-list-group color="white">
             <template v-slot:activator>
-              <v-list-item-icon>
-                <v-icon>mdi-account-group</v-icon>
+              <v-list-item-icon class="ml-2 ma-0 mt-2 mr-2">
+                <v-icon small style="color: #EDFAFD">mdi-account-group</v-icon>
               </v-list-item-icon>
-              <v-list-item-content> Accounts </v-list-item-content>
+              <v-list-item-content style="color: #DAF5FB; font-size:14px" > Accounts </v-list-item-content>
             </template>
-            <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
-                <router-link to="/acc-mgmt/student"
-                  >Student Accounts</router-link
-                >
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
-                <router-link to="/acc-mgmt/faculty"
-                  >Faculty Accounts</router-link
-                >
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
-                <router-link to="/acc-mgmt/admin">Admin Accounts</router-link>
-              </v-list-item-content>
-            </v-list-item>
+            <router-link to="/acc-mgmt/student" style="color: #DAF5FB">
+              <v-list-item>
+                <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
+                  Student Accounts
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="/acc-mgmt/faculty" style="color: #DAF5FB">
+              <v-list-item>
+                <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
+                  Faculty Accounts
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="/acc-mgmt/admin" style="color: #DAF5FB">
+              <v-list-item>
+                <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
+                  Admin Accounts
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
           </v-list-group>
 
-          <v-list-group>
+          <v-list-group color="white">
             <template v-slot:activator>
-              <v-list-item-icon>
-                <v-icon>mdi-handshake</v-icon>
+              <v-list-item-icon class="ma-0 ml-2 mt-2 mr-2">
+                <v-icon small style="color: #EDFAFD">mdi-handshake</v-icon>
               </v-list-item-icon>
-              <v-list-item-content> Transactions </v-list-item-content>
+              <v-list-item-content style="color: #DAF5FB; font-size:14px" > Transactions </v-list-item-content>
             </template>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
+              <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
                 View Transaction
               </v-list-item-content>
             </v-list-item>
             <v-list-item>
-              <v-list-item-content class="ml-10 pl-4 list-item">
+              <v-list-item-content class="ml-10 pl-4 list-item" style="color: #DAF5FB">
                 Archive
               </v-list-item-content>
             </v-list-item>
@@ -105,11 +104,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn small icon class="ma-1">
-        <v-icon>mdi-bell</v-icon>
-      </v-btn>
-
-      <v-menu offset-y>
+      <!-- <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn v-on="on" icon class="ma-1">
             <v-icon>mdi-account-circle</v-icon>
@@ -122,10 +117,22 @@
           <v-list-item
             ><router-link to="/account/activity">Activity</router-link>
           </v-list-item>
-          <v-list-item>Logout</v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu> -->
       <!-- <p class="pt-4 ml-1 mr-4"> Admin </p> -->
+      <router-link to="/account/activity">
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-account-clock</v-icon>
+      </v-btn>
+      </router-link>
+      <router-link to="/account/profile">
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-account-circle</v-icon>
+      </v-btn>
+      </router-link>
+      <v-btn small icon class="ma-1">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main class="ma-5">
@@ -136,6 +143,9 @@
 <style scoped>
 .list-item {
   font-size: 13px;
+}
+a {
+  text-decoration: none;
 }
 </style>
 <script>
