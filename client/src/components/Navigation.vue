@@ -1,6 +1,6 @@
 <template>
     <div id="navigation">
-        <div id="headlogo"></div>
+        <!-- <div id="headlogo"></div> -->
         <div id="navbar">
             <b-navbar toggleable="sm">
                 <b-navbar-toggle right target="nav-text-collapse"></b-navbar-toggle>
@@ -14,8 +14,8 @@
                     </b-navbar-nav>
 
                     <b-navbar-nav id="rightNav" class="ml-auto">
-                        <b-nav-item href="#"><b-icon icon="bell" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span class="navName">Notification</span></b-nav-item>
-                        <b-nav-item href="/mysaved"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.5" class="mt-2"></b-icon><span class="navName">My Saved Books</span></b-nav-item>
+                        <b-nav-item href="#"><b-icon icon="bell" aria-hidden="true" scale="1.2" class="mt-2"></b-icon><span class="navName">Notification</span></b-nav-item>
+                        <b-nav-item href="/mysaved"><b-icon icon="bookmark-heart-fill" aria-hidden="true" scale="1.2" class="mt-2"></b-icon><span class="navName">My Saved Books</span></b-nav-item>
                         <b-nav-item href="/account"><b-avatar variant="dark"></b-avatar><span class="navName">Account</span></b-nav-item>
                         <b-nav-text>Welcome, User</b-nav-text>
                         <b-nav-item-dropdown right> 
@@ -47,11 +47,12 @@ export default {
 
 #navbar{
     background: #387e8c;
+    padding: 0em !important;
 }
 
 #leftNav{
-    font-size: 1.5em;
-    width: 50%;
+    font-size: 1.2em;
+    width: 30%;
     justify-content: space-evenly;
 }
 
@@ -92,9 +93,9 @@ svg:hover{
     color: #fff;
 }
 
-.navbar-brand{
+/* .navbar-brand{
     display: none;
-}
+} */
 
 
 @media screen and (max-width:600px){

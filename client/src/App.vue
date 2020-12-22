@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <!-- <Navigation />
-    <router-view /> -->
+    <Navigation />
+    <router-view />
     
-    <AdminNav>
+    <!-- <AdminNav>
       <span slot="content" >
         <router-view />
       </span>
-    </AdminNav>
+    </AdminNav> -->
   </div>
 </template>
 
 <script>
-//import Navigation from '@/components/Navigation.vue'
-import AdminNav from './components/AdminNav.vue'
+import Navigation from '@/components/Navigation.vue'
+// import AdminNav from './components/AdminNav.vue'
 
 export default {
   components: {
-    //Navigation,
-    AdminNav 
+    Navigation,
+    // AdminNav 
   }
 }
 </script>
