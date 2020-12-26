@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+
 module.exports = new Sequelize('peekabookf', 'root', '', {
     host:'localhost',
     dialect: 'mysql',

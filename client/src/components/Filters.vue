@@ -29,109 +29,29 @@
 
 
       <div class="result">    
-          <b-row>
+          <b-row v-for="book in books" :key="book.id" :items="books" :per-page="perPage" :current-page="currentPage">
             <b-col cols="3" align-self="center" class="d-flex justify-content-center">
-              <img src="../assets/books/hp1.jpg" alt="Harry Potter and the Chamber of Secrets">
+              <img :src="book.cover" :alt="book.title">
             </b-col>
             <b-col cols="8">
-              <h4><strong>Harry Potter and the Philosopher's Stone</strong></h4>
-              <p>By J.K. Rowling</p>
-              <p>Bloomsbury Publishing</p>
-              <p>June 1997</p>
+              <h4><strong>{{book.title}}</strong></h4>
+              <p>By {{book.authorfname}}{{book.authorlname}}</p>
+              <p>{{book.publisher}}</p>
+              <p>{{book.publishDate}}</p>
               <p><strong>Location</strong></p>
-              <p>Library:JB-LRC</p>
-              <p>Location:Talamban Campus</p>
+              <p>{{book.location}}</p>
             </b-col>
             <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill = !fill">
-                <b-icon :icon="fill ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
+              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" :v-on:click="book.fill = !book.fill">
+                <b-icon :icon="book.fill ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
               </b-button>
             </b-col>
           </b-row>
           <hr>
-          <b-row>
-            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
-              <img src="../assets/books/hp2.jpg" alt="Harry Potter and the Chamber of Secrets">
-            </b-col>
-            <b-col cols="8">
-              <h4><strong>Harry Potter and the Chamber of Secrets</strong></h4>
-              <p>By J.K. Rowling</p>
-              <p>Bloomsbury Publishing</p>
-              <p>June 1997</p>
-              <p><strong>Location</strong></p>
-              <p>Library:JB-LRC</p>
-              <p>Location:Talamban Campus</p>
-            </b-col>
-            <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill1 = !fill1">
-                <b-icon :icon="fill1 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
-              </b-button>
-            </b-col>
-          </b-row>
-          <hr>
-          <b-row>
-            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
-              <img src="../assets/books/hp3.jpg" alt="Harry Potter and the Prisoner in Azkaban">
-            </b-col>
-            <b-col cols="8">
-              <h4><strong>Harry Potter and the Prisoner in Azkaban</strong></h4>
-              <p>By J.K. Rowling</p>
-              <p>Bloomsbury Publishing</p>
-              <p>June 1997</p>
-              <p><strong>Location</strong></p>
-              <p>Library:JB-LRC</p>
-              <p>Location:Talamban Campus</p>
-            </b-col>
-            <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill2 = !fill2">
-                <b-icon :icon="fill2 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
-              </b-button>
-            </b-col>
-          </b-row>
-          <hr>
-          <b-row>
-            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
-              <img src="../assets/books/hp4.jpg" alt="Harry Potter and the Prisoner in Azkaban">
-            </b-col>
-            <b-col cols="8">
-              <h4><strong>Harry Potter and the Goblet of Fire</strong></h4>
-              <p>By J.K. Rowling</p>
-              <p>Bloomsbury Publishing</p>
-              <p>June 1998</p>
-              <p><strong>Location</strong></p>
-              <p>Library:JB-LRC</p>
-              <p>Location:Talamban Campus</p>
-            </b-col>
-            <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill3 = !fill3">
-                <b-icon :icon="fill3 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
-              </b-button>
-            </b-col>
-          </b-row>
-          <hr>
-          <b-row>
-            <b-col cols="3" align-self="center" class="d-flex justify-content-center">
-              <img src="../assets/books/hp5.jpg" alt="Harry Potter and the Order of the Phoenix">
-            </b-col>
-            <b-col cols="8">
-              <h4><strong>Harry Potter and the Prisoner in Azkaban</strong></h4>
-              <p>By J.K. Rowling</p>
-              <p>Bloomsbury Publishing</p>
-              <p>June 1999</p>
-              <p><strong>Location</strong></p>
-              <p>Library:JB-LRC</p>
-              <p>Location:Talamban Campus</p>
-            </b-col>
-            <b-col cols="1">
-              <b-button v-b-tooltip.hover title="Add to My Collection" variant="light" v-on:click="fill4 = !fill4">
-                <b-icon :icon="fill4 ? 'bookmark-heart-fill' : 'bookmark-heart'" aria-hidden="true" scale="1.5" class="mt-2"></b-icon>
-              </b-button>
-            </b-col>
-          </b-row>
       </div>
     </div>
-    <div class="mt-4 mr-5">
-      <b-pagination v-model="currentPage" pills :total-rows="rows" align="right"></b-pagination>
+    <div class="overflow-auto mt-4 mr-5">
+      <b-pagination v-model="currentPage" pills :total-rows="rows" :per-page="perPage" aria-controls="res-book" align="right"></b-pagination>
     </div>
   </div>
 </template>
@@ -145,17 +65,107 @@ export default {
   },
   data() {
     return {
-      Icon:{
-        name: 'bookmark-heart'
-      },
-      fill: false,
-      fill1: false,
-      fill2: false,
-      fill3: false,
-      fill4: false,
-      rows: 50,
-      currentPage:1,
-      selectSort: null,
+      perPage: 5,
+      currentPage: 1,
+      books: [
+        {
+          id:1,
+          title: "Harry Potter and the Philosopher's Stone",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439708180',
+          publishDate: 'September 1, 1998',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp1.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },
+        {
+          id:2,
+          title: "Harry Potter and the Chamber of Secrets",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439064873',
+          publishDate: 'September 9, 2000',
+          publisher: 'Scholastic Education',
+          cover: require('../assets/books/hp2.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },
+        {
+          id:3,
+          title: "Harry Potter and the Prisoner of Azkaban",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439136365',
+          publishDate: 'October 1, 2001',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp3.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },
+        {
+          id:4,          
+          title: "Harry Potter and the Goblet of Fire",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439139601',
+          publishDate: 'September 1, 2002',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp4.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },
+        {
+          id:5,          
+          title: "Harry Potter and the Order of the Phoenix",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439358071',
+          publishDate: 'September 1, 2004',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp5.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        }, 
+        {
+          id:6,          
+          title: "Harry Potter and the Half-Blood Prince",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0439785969',
+          publishDate: 'July 25, 2006',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp6.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },  
+        {
+          id:7,          
+          title: "Harry Potter and the Deathly Hallows",
+          authorlname: 'Rowling',
+          authorfname: 'J.K.',
+          ISBN: '978-0545139700',
+          publishDate: 'July 01, 2009',
+          publisher: 'Scholastic Education',
+          cover:require('../assets/books/hp7.jpg'),
+          location:'JB-LRC, Talamban Campus',
+          status:'Available',
+          fill:false
+        },     
+      ],
+      // fill: false,
+      // fill1: false,
+      // fill2: false,
+      // fill3: false,
+      // fill4: false,
+      selectSort: [0],
       sort: [
         { text: 'Relevance', value: 'relevance' },
         { text: 'A-Z', value: 'ascend' },
@@ -163,7 +173,7 @@ export default {
         { text: 'New Added', value: 'newAdd' },
         { text: 'Available', value: 'available' },
       ],
-      selectLocation: [], 
+      selectLocation: [0], 
       location: [
         { text: 'Talamban Campus', value: 'talamban' },
         { text: 'North Campus', value: 'north' },
@@ -171,7 +181,7 @@ export default {
         { text: 'Downtorn Campus', value: 'downtown' },
         { text: 'Montessori Academy', value: 'montessori' },
       ],
-      selectType: [], 
+      selectType: [0], 
       type: [
         { text: 'Book', value: 'book' },
         { text: 'Journal', value: 'journal' },
@@ -181,8 +191,17 @@ export default {
       ],
     }
   },
-  methods: {
-    
+  computed: {
+    // get lists() {
+    //   return this.books.slice(
+    //     (this.currentPage-1)*this.perPage,
+    //     this.currentPage * this.perPage,
+    //   );
+    // },
+    rows() {
+      return this.books.length
+      // return this.$store.getters.loadedLists.length
+    }
   }
 };
 </script>
