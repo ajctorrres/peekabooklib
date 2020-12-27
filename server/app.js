@@ -13,8 +13,9 @@ dbconnect.authenticate()
 const app = express();
 app.use(cors());
 app.get('/', (req, res) => res.send('INDEX'));
-app.use('/resource', require('./controllers/resourceController'));
 
+app.use('/user', require('./controllers/userController'));
+app.use('/resource', require('./controllers/resourceController'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, console.log(`Server started ${PORT}`));
